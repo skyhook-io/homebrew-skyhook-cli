@@ -5,11 +5,11 @@
 class Skyhook < Formula
   desc "CLI for Skyhook."
   homepage "https://www.skyhook.io"
-  version "2.1.0"
+  version "2.2.0"
 
   on_macos do
-    url "https://github.com/skyhook-io/skyhook-cli/releases/download/2.1.0/skyhook_cli_Darwin_all"
-    sha256 "00643e4ad669dfabe19105548854b25d4bed084165a405dadbf6ad5ef7719dd8"
+    url "https://github.com/skyhook-io/skyhook-cli/releases/download/2.2.0/skyhook_cli_Darwin_all"
+    sha256 "f77af2cad5a2dbb404b49519f6a7815ae129c5fcaf7b891538806f8780d113b5"
 
     def install
       bin.install "skyhook_cli_Darwin_all" => "skyhook"
@@ -17,20 +17,20 @@ class Skyhook < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/skyhook-io/skyhook-cli/releases/download/2.1.0/skyhook_cli_Linux_arm64"
-      sha256 "caa98d169336614a5bc06e562f1f677d513d873ed4b2d49d3ca7af39875b9fa4"
-
-      def install
-        bin.install "skyhook_cli_Linux_arm64" => "skyhook"
-      end
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/skyhook-io/skyhook-cli/releases/download/2.1.0/skyhook_cli_Linux_x86_64"
-      sha256 "41cba12901e65db979d113b9dc3fcc921a210f16f19fbce32cdd5ab8d4b2323b"
+      url "https://github.com/skyhook-io/skyhook-cli/releases/download/2.2.0/skyhook_cli_Linux_x86_64"
+      sha256 "0c3eeaa24ba9df0c09bfd0a76a077754dd58828a414e138c38306e395ab42d4a"
 
       def install
         bin.install "skyhook_cli_Linux_x86_64" => "skyhook"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/skyhook-io/skyhook-cli/releases/download/2.2.0/skyhook_cli_Linux_arm64"
+      sha256 "81069cbdf486d44bc534815b047660f54a63e833737348f3a08aa5fca381f944"
+
+      def install
+        bin.install "skyhook_cli_Linux_arm64" => "skyhook"
       end
     end
   end
