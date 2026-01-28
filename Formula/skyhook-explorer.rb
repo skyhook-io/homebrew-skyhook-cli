@@ -5,13 +5,13 @@
 class SkyhookExplorer < Formula
   desc "Kubernetes cluster visualization and topology explorer"
   homepage "https://github.com/skyhook-io/explorer"
-  version "0.6.1"
+  version "0.6.2"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/skyhook-io/explorer/releases/download/v0.6.1/explorer_0.6.1_darwin_amd64.tar.gz"
-      sha256 "39b6cfdbde6b38c300c3416e98be8f252dc0d208ed5d8170c55205dbb2d2cdfe"
+      url "https://github.com/skyhook-io/explorer/releases/download/v0.6.2/explorer_0.6.2_darwin_amd64.tar.gz"
+      sha256 "51cce9c1a8bcd196d07792b7408bc0ac5d2de1c0c7c85f8e02e16c69881a041d"
 
       def install
         bin.install "kubectl-explorer"
@@ -19,8 +19,8 @@ class SkyhookExplorer < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/skyhook-io/explorer/releases/download/v0.6.1/explorer_0.6.1_darwin_arm64.tar.gz"
-      sha256 "0f0d08f445e0237c5b243b275cf638628e4cb23dc065e2edbac144e2411e43e5"
+      url "https://github.com/skyhook-io/explorer/releases/download/v0.6.2/explorer_0.6.2_darwin_arm64.tar.gz"
+      sha256 "b22d185cc9339c04d8a9bce3ceb7c16eac6efdd42443c0f5b9ba07811a5fb958"
 
       def install
         bin.install "kubectl-explorer"
@@ -31,16 +31,16 @@ class SkyhookExplorer < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/skyhook-io/explorer/releases/download/v0.6.1/explorer_0.6.1_linux_amd64.tar.gz"
-      sha256 "6fe344904cf80fa319b149ccce64eec506fbb7a2895714e0f060789257454b7f"
+      url "https://github.com/skyhook-io/explorer/releases/download/v0.6.2/explorer_0.6.2_linux_amd64.tar.gz"
+      sha256 "5e821db791da0c3ac819a2597e6ff5fcae968ac04f7632b72cfd78b8559060ba"
       def install
         bin.install "kubectl-explorer"
         bin.install_symlink "kubectl-explorer" => "skyhook-explorer"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/skyhook-io/explorer/releases/download/v0.6.1/explorer_0.6.1_linux_arm64.tar.gz"
-      sha256 "024b2f37378cb3ebfe16ce91bf633c1403595a2538cff6429a4c2e1f90666c96"
+      url "https://github.com/skyhook-io/explorer/releases/download/v0.6.2/explorer_0.6.2_linux_arm64.tar.gz"
+      sha256 "63e276f01783e9094098dc8349af963208538a2dc01d1a19aa0aea3ced4f6384"
       def install
         bin.install "kubectl-explorer"
         bin.install_symlink "kubectl-explorer" => "skyhook-explorer"
