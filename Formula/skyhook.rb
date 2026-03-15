@@ -5,31 +5,29 @@
 class Skyhook < Formula
   desc "CLI for Skyhook."
   homepage "https://www.skyhook.io"
-  version "2.3.0"
+  version "2.3.1"
 
   on_macos do
-    url "https://github.com/skyhook-io/skyhook-cli/releases/download/2.3.0/skyhook_darwin_all.tar.gz"
-    sha256 "6b2005e6bd6190cfdbea0a3261fb429c033f5f0dcc2fa31ace0db9f000d23482"
+    url "https://github.com/skyhook-io/skyhook-cli/releases/download/2.3.1/skyhook_darwin_all.tar.gz"
+    sha256 "aa2960570922a2f1407f70130c9e6625da193585d85288de856f21cf15a87a6c"
 
-    def install
+    define_method(:install) do
       bin.install "skyhook"
     end
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/skyhook-io/skyhook-cli/releases/download/2.3.0/skyhook_linux_arm64.tar.gz"
-      sha256 "b05856edd5b8f508d5bd0c640c33da7415894fc7d1a0b3c0a66e20167ef485e2"
-
-      def install
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/skyhook-io/skyhook-cli/releases/download/2.3.1/skyhook_linux_amd64.tar.gz"
+      sha256 "5137d0f8f1331ee3923d5ae28882ec1d3c9391d852e6e335421a9c37e72ff0ff"
+      define_method(:install) do
         bin.install "skyhook"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/skyhook-io/skyhook-cli/releases/download/2.3.0/skyhook_linux_amd64.tar.gz"
-      sha256 "968eb886c84e4db30ca100a3cd24597069fb8d288fdc8680d1e4dcc0d9f125f6"
-
-      def install
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/skyhook-io/skyhook-cli/releases/download/2.3.1/skyhook_linux_arm64.tar.gz"
+      sha256 "5cd8e7763bede0dae825e17622438a0e82d69fe5782ce553c18a6dde445d23c8"
+      define_method(:install) do
         bin.install "skyhook"
       end
     end
