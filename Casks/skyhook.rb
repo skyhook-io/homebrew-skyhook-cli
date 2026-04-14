@@ -3,7 +3,7 @@ cask "skyhook" do
   name "skyhook"
   desc "CLI for Skyhook."
   homepage "https://www.skyhook.io"
-  version "2.3.3"
+  version "2.4.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -13,17 +13,17 @@ cask "skyhook" do
 
   on_macos do
     url "https://github.com/skyhook-io/skyhook-cli/releases/download/#{version}/skyhook_darwin_all.tar.gz"
-    sha256 "f8dfd03a9f6f15ee5d435912be85286a31141df57897c3e1ff561b135e274211"
+    sha256 "20d878e69fa354b71d34accf8ae9253da8b7756b0ce65f59752ee3fd4ae27e71"
   end
 
   on_linux do
     on_intel do
       url "https://github.com/skyhook-io/skyhook-cli/releases/download/#{version}/skyhook_linux_amd64.tar.gz"
-      sha256 "3d528df15e81e0e96a42ad5fe01dce8c6fe27e83a21e497d852849429e5d2060"
+      sha256 "5605afef8b58b6c5b123c981f78d01f18910d7b92b7e797583d63fad93d6c45e"
     end
     on_arm do
       url "https://github.com/skyhook-io/skyhook-cli/releases/download/#{version}/skyhook_linux_arm64.tar.gz"
-      sha256 "e341577c579bb88b8a9334103ad7252cc00c262a0d9babf7f77bffa64429db1e"
+      sha256 "882fa94ab2a78f17a79407abce87817bc9fdd1b5524aaf88d9620bd0cbfc3f1b"
     end
   end
 
